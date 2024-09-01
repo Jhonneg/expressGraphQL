@@ -1,12 +1,8 @@
-const productsModel = require("./products.model");
+import { getAllProducts } from "./products.model";
 
-module.exports = {
-  Query: {
-    products: () => {
-      return productsModel.getAllProducts();
-    },
-    productsByPrice: (parent, args) => {
-      
-    }
+export const Query = {
+  products: () => {
+    return getAllProducts();
   },
+  productsByPrice: (parent, args) => {},
 };

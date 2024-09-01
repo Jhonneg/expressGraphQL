@@ -15,10 +15,6 @@ const orders = [
   },
 ];
 
-function getAllOrders() {
+export function getAllOrders() {
   return orders;
 }
-
-module.exports = {
-  getAllOrders,
-};
