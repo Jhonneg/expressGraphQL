@@ -16,3 +16,15 @@ const products = [
 export function getAllProducts() {
   return products;
 }
+
+export function getProductByPrice(min, max) {
+  return products.filter((product) => {
+    return product.price >= min && product.price <= max;
+  });
+}
+
+export function getProductById(id) {
+  return products.find((product) => {
+    return product.id === id;
+  });
+}
