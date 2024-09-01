@@ -1,14 +1,17 @@
 import express from "express";
-import { buildSchema } from "graphql";
 import { createYoga } from "graphql-yoga";
+import { makeExecutableSchema } from "@graphql-tools/schema";
 
-const schema = buildSchema(`
+const schemaText = `
   type Query {
-   description: String
-   price:Float
+    products: [Product]
+    order: [Order]
 }
-`);
+`;
 
+const schema = makeExecutableSchema({
+  typeDefs: [schemaText],
+});
 
 const app = express();
 
@@ -16,6 +19,7 @@ app.use(
   "/graphql",
   createYoga({
     schema: schema,
+    graphiql: true,
   })
 );
 
