@@ -3,6 +3,7 @@ import {
   getProductByPrice,
   getProductById,
   addNewProduct,
+  addNewProductReview,
 } from "./products.model";
 
 export const Query = {
@@ -20,5 +21,8 @@ export const Query = {
 export const Mutation = {
   addNewProduct: (_, args) => {
     return addNewProduct(args.id, args.description, args.price);
+  },
+  addNewProductReview: (_, args) => {
+    addNewProductReview(args.id, args.rating, args.comment);
   },
 };

@@ -39,3 +39,15 @@ export function addNewProduct(id, description, price) {
   products.push(newProduct);
   return newProduct;
 }
+
+export function addNewProductReview(id, rating, comment) {
+  const matchedProduct = getProductById(id);
+  if (matchedProduct) {
+    const newProductReview = {
+      rating,
+      comment,
+    };
+    matchedProduct.reviews.push(newProductReview);
+    return newProductReview;
+  }
+}
