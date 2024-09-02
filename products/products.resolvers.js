@@ -2,6 +2,7 @@ import {
   getAllProducts,
   getProductByPrice,
   getProductById,
+  addNewProduct,
 } from "./products.model";
 
 export const Query = {
@@ -13,5 +14,11 @@ export const Query = {
   },
   product: (_, args) => {
     return getProductById(args.id);
+  },
+};
+
+export const Mutation = {
+  addNewProduct: (_, args) => {
+    return addNewProduct(args.id, args.description, args.price);
   },
 };

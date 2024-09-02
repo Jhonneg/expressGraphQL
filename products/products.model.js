@@ -28,3 +28,14 @@ export function getProductById(id) {
     return product.id === id;
   });
 }
+
+export function addNewProduct(id, description, price) {
+  const newProduct = {
+    id,
+    price,
+    description,
+    reviews: [],
+  };
+  products.push(newProduct);
+  return newProduct;
+}

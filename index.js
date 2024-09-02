@@ -6,7 +6,7 @@ import { loadFilesSync } from "@graphql-tools/load-files";
 import { makeExecutableSchema } from "@graphql-tools/schema";
 
 const typesArray = loadFilesSync("**/*", {
-  extensions: ["graphql"],
+  extensions: ["gql"],
 });
 
 const resolversArray = loadFilesSync("**/*", {
